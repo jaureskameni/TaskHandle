@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  title: TASK HANDLE REST API
+  version: v1
+tags:
+  - name: User
+    description: everything about the users
+paths:
+  /user:
+    post:
+      tags:
+        - User
+      summary: add new user
+      description: add new user
+      operationId: createUser
+      requestBody:
+        description: User object that need to be add
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDTO'
+      responses:
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                format: uuid
+components:
+  schemas:
+    UserDTO:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        firstname:
+          $ref: '#/components/schemas/FirstnameDTO'
+        lastname:
+          $ref: '#/components/schemas/LastnameDTO'
+        username:
+          type: string
+          description: username's user
+        civility:
+          $ref: '#/components/schemas/CivilityDTO'
+        email:
+          $ref: '#/components/schemas/EmailAddressDTO'
+        password:
+          $ref: '#/components/schemas/PasswordDTO'
+        role:
+          type: array
+          items:
+            $ref: '#/components/schemas/RolesDTO'
+    FirstnameDTO:
+      type: object
+      properties:
+        value:
+          type: string
+          description: firstname's user
+    LastnameDTO:
+      type: object
+      properties:
+        value:
+          type: string
+          description: lastname's user
+    CivilityDTO:
+      type: string
+      enum:
+        - MAN
+        - WOMAN
+    EmailAddressDTO:
+      type: object
+      properties:
+        email:
+          type: string
+          description: email address's user
+    PasswordDTO:
+      type: object
+      properties:
+        value:
+          type: string
+          description: password's user
+    RolesDTO:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: firstname's user
+        name:
+          type: string
+          description: name's role
+        description:
+          type: string
+          description: description of role
