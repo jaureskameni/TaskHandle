@@ -1,9 +1,13 @@
 package org.knj.taskhandle.domaine;
 
+import jakarta.persistence.Embeddable;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.apache.commons.validator.routines.EmailValidator;
 
 @Getter
+@Embeddable
+@NoArgsConstructor
 public class EmailAddress {
     private String email;
 

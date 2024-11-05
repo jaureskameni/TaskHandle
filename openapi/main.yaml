@@ -49,10 +49,10 @@ components:
           $ref: '#/components/schemas/EmailAddressDTO'
         password:
           $ref: '#/components/schemas/PasswordDTO'
-        role:
-          type: array
-          items:
-            $ref: '#/components/schemas/RolesDTO'
+#        role:
+#          type: array
+#          items:
+#            $ref: '#/components/schemas/RolesDTO'
     FirstnameDTO:
       type: object
       properties:

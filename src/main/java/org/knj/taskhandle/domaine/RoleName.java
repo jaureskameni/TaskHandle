@@ -1,13 +1,21 @@
+/*
 package org.knj.taskhandle.domaine;
 
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.List;
 import java.util.Set;
 
+import static org.knj.taskhandle.domaine.Privilege.DELETE_PRIVILEGE;
 import static org.knj.taskhandle.domaine.Privilege.READ_PRIVILEGE;
+import static org.knj.taskhandle.domaine.Privilege.UPDATE_PRIVILEGE;
+import static org.knj.taskhandle.domaine.Privilege.WRITE_PRIVILEGE;
 
-public enum Role {
+@Getter
+@RequiredArgsConstructor
+public enum RoleName {
     ADMIN(
             Set.of(READ_PRIVILEGE, WRITE_PRIVILEGE, UPDATE_PRIVILEGE, DELETE_PRIVILEGE)
     ),
@@ -31,3 +39,4 @@ public enum Role {
         return authorities;
     }
 }
+*/
